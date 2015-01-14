@@ -167,6 +167,7 @@
     //请求访问用户通讯录,注意无论成功与否block都会调用
     ABAddressBookRequestAccessWithCompletion(self.addressBook, ^(bool granted, CFErrorRef error) {
         if (!granted) {
+            
             NSLog(@"未获得通讯录访问权限！");
         }
         [self initAllPerson];
@@ -246,7 +247,6 @@
 
 /**
  *  根据RecordID修改联系人信息
- *
  *  @param recordID   记录唯一ID
  *  @param firstName  姓
  *  @param lastName   名
